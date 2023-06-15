@@ -1,7 +1,7 @@
 # FastAPI Base App
 
-![example workflow](https://github.com/pieteradejong/fastapi-base/blob/main/.github/workflows/pytest.yml/badge.svg)
 
+[![pytest](https://github.com/pieteradejong/fastapi-base/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/pieteradejong/fastapi-base/actions/workflows/pytest.yml)
 
 
 Use of FastAPI to create a highly performant Python REST API.
