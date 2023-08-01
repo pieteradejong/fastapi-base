@@ -1,12 +1,15 @@
-import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
+from app.api import api
 
 app = FastAPI()
 
-@app.get("/")
-def home():
-    return {"Hello": "World!"}
+app.include_router(api.router)
 
-if __name__ == "__main__":
-    uvicorn.run("app:app")
+@app.on_event("startup")
+async def startup_event():
+    print("Starting application...")
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    print("Shutting down application...")
