@@ -1,12 +1,10 @@
-version: "3"
+version: "0.1"
 services:
-  web:
-    build: ./app
-    ports:
-      - "80:80"
-  db:
-    image: postgres
+  api:
+    build: .
+    container_name: fastapi-application
     environment:
-      POSTGRES_PASSWORD: example
-  mongo:
-    image: mongo
+      PORT: 8000
+    ports:
+      - '8000:8000'
+    restart: "no"
