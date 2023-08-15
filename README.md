@@ -1,5 +1,5 @@
 # FastAPI Base App
-[![pytest](https://github.com/pieteradejong/fastapi-base/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/pieteradejong/fastapi-base/actions/workflows/pytest.yml)
+[![pytest](https://github.com/pieteradejong/fastapi-base/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pieteradejong/fastapi-base/actions/workflows/ci.yml)
 
 **Purpose**: for future use - get started immediately with any new app.
 
