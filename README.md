@@ -38,10 +38,5 @@ docker-compose exec db psql --username=fastapi --dbname=fastapi_dev
 ```
 
 ## TODOs
-* Fix tests module import
-* Ensure using Python 3.11 (latest) throughout
-* add basic Pydantic data models for User, Post, Comment
-* merge pytest.yml into ci.yml
-* add mongo and postgres db's as dependencies for injection
-* add env var config for db config etc.
+* potentially add Pydantic's config capabilities.
 
