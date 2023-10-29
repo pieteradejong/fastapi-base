@@ -1,16 +1,25 @@
 from fastapi.testclient import TestClient
-from app.main import app
+from app.api.api import router
 
-client = TestClient(app)
+client = TestClient(router)
 
 
 def test_root():
     resp = client.get("/")
     assert resp.status_code == 200
-    assert resp.json() == {"message": "Application root."}
+    assert resp.headers["Content-Type"] == "application/json"
+
+    response_data = resp.json()
+    assert response_data["status"] == "success"
+    assert response_data["message"] == "Template application using FastAPI."
 
 
-def test_status():
-    resp = client.get("/status")
+def test_health():
+    resp = client.get("/health")
     assert resp.status_code == 200
-    assert resp.json() == {"message": "Application status."}
+    assert resp.headers["Content-Type"] == "application/json"
+
+    response_data = resp.json()
+    assert response_data["status"] == "success"
+    assert isinstance(response_data["result"], list)
+    assert response_data["message"] == "Application is healthy."
