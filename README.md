@@ -5,9 +5,9 @@
 
 ## Quickly run with Docker
 
+Clone repo and go into `fastapi-base` directory:
 ```sh
-git clone https://github.com/your-username/your-fastapi-app.git
-cd your-fastapi-app
+git clone git@github.com:pieteradejong/fastapi-base.git
 ```
 
 ```sh
@@ -18,7 +18,8 @@ docker build -t fastapi-based .
 docker run -d --name fastapi-based-container fastapi-based
 ```
 
-**Now you can view the app at http://127.0.0.1:8000/, and Swagger UI docs at `/docs`.
+# TODO error running Dockerfile
+**View app status endpoint** at `http://127.0.0.1:8000/health`, and Swagger UI docs at `/docs`.
 
 
 ```sh
