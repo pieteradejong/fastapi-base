@@ -5,21 +5,28 @@
 
 ## Quickly run with Docker
 
-Clone repo and go into `fastapi-base` directory:
+Clone repo:
 ```sh
 git clone git@github.com:pieteradejong/fastapi-base.git
 ```
 
+
+Build: within  `fastapi-base` directory:
 ```sh
-docker build -t fastapi-based .
+docker build -t fastapi-base .
 ```
 
+Run:
 ```sh
-docker run -d --name fastapi-based-container fastapi-based
+docker run -d --name -p 8000 fastapi-based-container fastapi-based
 ```
 
-# TODO error running Dockerfile
-**View app status endpoint** at `http://127.0.0.1:8000/health`, and Swagger UI docs at `/docs`.
+Explore contents of running container (fill in container id, and whichever command after `-c`):
+```sh
+docker exec -it *<CONTAINER_ID>* /bin/sh -c "ls /app"
+```
+
+Visit endpoints at [http://127.0.0.1:8000/](http://127.0.0.1:8000) and [/health](http://127.0.0.1:8000/health), and Swagger UI doc at [/docs](http://127.0.0.1:8000/docs).
 
 
 ```sh
@@ -33,12 +40,12 @@ docker rm fastapi-based-container
 
 ## Run/dev/test local, no Docker
 
-From `fastapi-base` folder:
+Run server, from `fastapi-base` folder:
 ```sh
 uvicorn app.main:app --reload
 ```
 
-From `fastapi-base` folder:
+Test, from `fastapi-base` folder:
 ```sh
 pytest
 ```
