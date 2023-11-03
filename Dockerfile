@@ -1,12 +1,13 @@
-FROM ubuntu:20.04
+FROM python:3.9
 
-RUN apt-get update && apt-get install -y python3 python3-pip
-
-COPY requirements.txt /app/
 WORKDIR /app
 
-RUN pip3 install -r requirements.txt
+COPY ./requirements.txt .
 
-COPY . /app
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY ./app .
+
+EXPOSE 80
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]

@@ -15,7 +15,7 @@ docker build -t fastapi-based .
 ```
 
 ```sh
-docker run -d --name fastapi-based-container -p 80:80 fastapi-based
+docker run -d --name fastapi-based-container fastapi-based
 ```
 
 **Now you can view the app at http://127.0.0.1:8000/, and Swagger UI docs at `/docs`.
