@@ -10,7 +10,6 @@ Clone repo:
 git clone git@github.com:pieteradejong/fastapi-base.git
 ```
 
-
 Build: within  `fastapi-base` directory:
 ```sh
 docker build -t fastapi-base .
@@ -18,23 +17,23 @@ docker build -t fastapi-base .
 
 Run:
 ```sh
-docker run -d --name -p 8000 fastapi-based-container fastapi-based
+docker run -p 8000:80  fastapi-base
 ```
 
 Explore contents of running container (fill in container id, and whichever command after `-c`):
 ```sh
-docker exec -it *<CONTAINER_ID>* /bin/sh -c "ls /app"
+docker exec -it <CONTAINER_ID> /bin/sh -c "ls /app"
 ```
 
 Visit endpoints at [http://127.0.0.1:8000/](http://127.0.0.1:8000) and [/health](http://127.0.0.1:8000/health), and Swagger UI doc at [/docs](http://127.0.0.1:8000/docs).
 
 
 ```sh
-docker stop fastapi-based-container
+docker stop <container name>
 ```
 
 ```sh
-docker rm fastapi-based-container
+docker rm <container_name>
 ```
 
 
